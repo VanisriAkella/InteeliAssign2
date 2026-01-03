@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: intelliproj
+  labels: 
+    app: intelliproj
+spec:
+  replicas: 5
+  selector: 
+    matchLabels:
+      app: intelliproj
+  template:
+    metadata:
+      labels:
+        app: intelliproj
+    spec:
+      containers:
+      - name: intelliproj
+        image: vanisriakella/intelliproj:latest
+        ports:
+        - containerPort: 80
